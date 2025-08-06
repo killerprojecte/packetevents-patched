@@ -32,6 +32,7 @@ import java.util.function.Function;
  */
 public class PacketEventsSettings {
 
+    private boolean checkCompatibility = true;
     private TimeStampMode timestampMode = TimeStampMode.MILLIS;
     private boolean defaultReencode = true; // true for backwards compat and more idiot-proof
     private boolean checkForUpdates = true;
@@ -166,6 +167,18 @@ public class PacketEventsSettings {
     }
 
     /**
+     * Check Compatibility Option
+     *
+     * @param checkCompatibility Value
+     * @return Settings instance.
+     */
+    @ApiStatus.Internal
+    public PacketEventsSettings checkCompatibility(boolean checkCompatibility) {
+        this.checkCompatibility = checkCompatibility;
+        return this;
+    }
+
+    /**
      * Should the packet listeners be read only?
      *
      * @return Getter for {@link #defaultReencode}
@@ -258,5 +271,14 @@ public class PacketEventsSettings {
      */
     public TimeStampMode getTimeStampMode() {
         return timestampMode;
+    }
+
+    /**
+     * Should packetevents check compatibility
+     *
+     * @return Getter for {@link #checkCompatibility}
+     */
+    public boolean shouldCheckCompatibility() {
+        return checkCompatibility;
     }
 }

@@ -196,7 +196,7 @@ public class SpigotPacketEventsBuilder {
                     }
 
                     // Let people override this, at their own risk
-                    if (!"true".equalsIgnoreCase(System.getenv("PE_IGNORE_INCOMPATIBILITY"))) {
+                    if (settings.shouldCheckCompatibility()) {
                         checkCompatibility();
                     }
 

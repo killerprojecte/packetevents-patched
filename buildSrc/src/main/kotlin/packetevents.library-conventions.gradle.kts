@@ -138,8 +138,8 @@ publishing {
 
     repositories {
         maven {
-            val snapshotUrl = "https://repo.codemc.io/repository/maven-snapshots/"
-            val releaseUrl = "https://repo.codemc.io/repository/maven-releases/"
+            val snapshotUrl = "https://repo.fastmcmirror.org/content/repositories/snapshots/"
+            val releaseUrl = "https://repo.fastmcmirror.org/content/repositories/releases/"
 
             // Check which URL should be used
             url = uri(if ((version as String).endsWith("SNAPSHOT")) snapshotUrl else releaseUrl)

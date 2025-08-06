@@ -12,7 +12,7 @@ ext["versionMeta"] = if (ext["snapshot"] == true) "-SNAPSHOT" else ""
 ext["versionMetaWithHash"] = "+${ext["commitHash"]}${ext["versionMeta"]}"
 ext["versionNoHash"] = "${ext["fullVersion"]}${ext["versionMeta"]}"
 
-group = "com.github.retrooper"
+group = "dev.rgbmc.packetevents"
 description = rootProject.name
 version = "${ext["fullVersion"]}${ext[if (ext["snapshot"] == true) "versionMetaWithHash" else "versionMeta"]}"
 
